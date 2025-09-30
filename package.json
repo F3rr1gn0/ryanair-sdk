@@ -1,0 +1,58 @@
+{
+  "name": "@f3rr1gn0/ryanair-sdk",
+  "version": "0.1.0",
+  "description": "Ryanair API client with rate-limited got wrapper and Zod validation.",
+  "license": "MIT",
+  "author": "f3rr1gn0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f3rr1gn0/ryanair-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/f3rr1gn0/ryanair-sdk/issues"
+  },
+  "homepage": "https://github.com/f3rr1gn0/ryanair-sdk#readme",
+  "keywords": [
+    "ryanair",
+    "sdk",
+    "api",
+    "flights",
+    "fares",
+    "airports"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "fast-cartesian": "^9.0.1",
+    "got": "^14.4.9",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.2.4",
+    "tsup": "^8.5.0",
+    "vitest": "^3.2.4"
+  }
+}
