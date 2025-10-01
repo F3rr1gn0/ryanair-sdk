@@ -7,12 +7,12 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/f3rr1gn0/ryanair-sdk.git"
+    "url": "https://github.com/F3rr1gn0/ryanair-sdk"
   },
   "bugs": {
-    "url": "https://github.com/f3rr1gn0/ryanair-sdk/issues"
+    "url": "https://github.com/F3rr1gn0/ryanair-sdk/issues"
   },
-  "homepage": "https://github.com/f3rr1gn0/ryanair-sdk#readme",
+  "homepage": "https://github.com/F3rr1gn0/ryanair-sdk#readme",
   "keywords": [
     "ryanair",
     "sdk",
