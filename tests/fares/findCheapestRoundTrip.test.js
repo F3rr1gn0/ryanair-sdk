@@ -48,6 +48,7 @@ vi.mock('../../src/fares/findDailyFaresInRange.js', () => ({
 
 let findDailyFaresInRange;
 let findCheapestRoundTrip;
+let testingHelpers;
 
 const setupCartesian = () => {
   cartesianMock.mockImplementation(([outbounds, inbounds]) =>
@@ -59,7 +60,9 @@ describe('fares.findCheapestRoundTrip', () => {
   beforeEach(async () => {
     vi.resetModules();
     ({ findDailyFaresInRange } = await import('../../src/fares/findDailyFaresInRange.js'));
-    ({ findCheapestRoundTrip } = await import('../../src/fares/findCheapestRoundTrip.js'));
+    ({ findCheapestRoundTrip, __testing__: testingHelpers } = await import(
+      '../../src/fares/findCheapestRoundTrip.js',
+    ));
     cartesianMock.mockClear();
     setupCartesian();
     findDailyFaresInRange.mockReset();
@@ -99,5 +102,11 @@ describe('fares.findCheapestRoundTrip', () => {
       return: laterInboundFare,
       price: 45,
     });
+  });
+
+  it('reuses the cartesian helper after the first load', async () => {
+    const first = await testingHelpers.loadCartesian();
+    const second = await testingHelpers.loadCartesian();
+    expect(second).toBe(first);
   });
 });
