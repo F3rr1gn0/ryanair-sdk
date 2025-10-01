@@ -42,7 +42,10 @@
     "build": "tsup",
     "test": "vitest run --coverage",
     "test:watch": "vitest",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "check": "run-p check:*",
+    "test:integration": "vitest run integration --coverage",
+    "test:unit": "vitest run unit --coverage"
   },
   "dependencies": {
     "date-fns": "^4.1.0",

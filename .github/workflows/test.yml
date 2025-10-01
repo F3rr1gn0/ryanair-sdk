@@ -31,7 +31,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: npm ci
-      - run: npm run test --ws
+      - run: npm run test
 
   coverage:
     name: collect coverage
@@ -46,7 +46,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run test:unit --ws
+      - run: npm run test:unit
       - uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -54,7 +54,7 @@ jobs:
 
       - run: rm -rf coverage
 
-      - run: npm run test:integration --ws
+      - run: npm run test:integration
       - uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
