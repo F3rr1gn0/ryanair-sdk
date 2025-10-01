@@ -1,6 +1,6 @@
 {
   "name": "@f3rr1gn0/ryanair-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ryanair API client with rate-limited got wrapper and Zod validation.",
   "license": "MIT",
   "author": "f3rr1gn0",
