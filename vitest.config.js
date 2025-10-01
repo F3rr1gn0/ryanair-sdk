@@ -15,7 +15,7 @@ export default defineConfig({
     include: ['tests/**/*.test.js'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'json-summary', 'html'],
+      reporter: ['text', 'json', 'json-summary', 'html', 'lcov'],
       lines: 90,
       functions: 90,
       branches: 85,
