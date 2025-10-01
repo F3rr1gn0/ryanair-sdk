@@ -43,9 +43,9 @@
     "test": "vitest run --coverage",
     "test:watch": "vitest",
     "prepare": "npm run build",
-    "check": "run-p check:*",
-    "test:integration": "vitest run integration --coverage",
-    "test:unit": "vitest run unit --coverage"
+    "check": "npm run build && npm test",
+    "test:unit": "vitest run --coverage",
+    "test:integration": "vitest run --coverage"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
